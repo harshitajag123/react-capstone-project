@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Home() {
+	const navigate = useNavigate();
+
 	const [data, setData] = useState({
 		name: "",
 		username: "",
@@ -46,10 +48,10 @@ function Home() {
 			errors.checkbox = "Checkbox is required";
 		}
 		setErrors(errors);
-		if(Object.keys(errors).length>0) return
-		else{
-			alert("Form submitted successfully")
-			localStorage.setItem("userData",JSON.stringify(data))
+		if (Object.keys(errors).length > 0) return;
+		else {
+			alert("Form submitted successfully");
+			localStorage.setItem("userData", JSON.stringify(data));
 			setData({
 				name: "",
 				username: "",
@@ -57,6 +59,8 @@ function Home() {
 				mobile: "",
 				checkbox: false,
 			});
+			console.log("Navigating to /selection"); // Debug statement
+			navigate("/selection");
 		}
 	};
 	return (
