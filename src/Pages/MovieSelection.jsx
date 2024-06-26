@@ -6,17 +6,17 @@ import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function MovieSelection() {
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 	const MOVIES = [
-		{ id: 0, movie: "Actions" },
+		{ id: 0, movie: "Action" },
 		{ id: 1, movie: "Drama" },
 		{ id: 2, movie: "Romance" },
 		{ id: 3, movie: "Thriller" },
 		{ id: 4, movie: "Horror" },
 		{ id: 5, movie: "Western" },
-		{ id: 6, movie: "Fantacy" },
-		{ id: 7, movie: "Fiction" },
-		{ id: 8, movie: "Musical" },
+		{ id: 6, movie: "Fantasy" },
+		{ id: 7, movie: "Science Fiction" },
+		{ id: 8, movie: "Music" },
 	];
 	const [selectedMovies, setSelectedMovies] = useState([]);
 	const moveNext = () => {
@@ -24,8 +24,8 @@ function MovieSelection() {
 			alert("Please select at least 3 movies");
 		} else {
 			localStorage.setItem("selectedMovies", JSON.stringify(selectedMovies));
-      setSelectedMovies([]);
-      navigate("/info");
+			setSelectedMovies([]);
+			navigate("/info");
 		}
 	};
 
