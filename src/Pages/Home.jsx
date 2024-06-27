@@ -96,7 +96,8 @@ function Home() {
 					width="40%"
 					height="70%"
 					style={{ height: "70%" }}
-					src={`${process.env.PUBLIC_URL}/signUp.png`}
+					// src={`${process.env.PUBLIC_URL}/signUp.png`}
+					src="/signUp.png"
 					alt="Sign Up"
 				/>
 				<form
