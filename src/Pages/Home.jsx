@@ -92,14 +92,20 @@ function Home() {
 					margin: "0",
 					padding: "0",
 				}}>
-				<img
-					width="40%"
-					height="70%"
-					style={{ height: "70%" }}
-					// src={`${process.env.PUBLIC_URL}/signUp.png`}
-					src="/signUp.png"
-					alt="Sign Up"
-				/>
+				
+					<img
+						width="50%"
+						height={1000}
+						//height="80%"
+						//style={{ height: "80%" }}
+						// src={`${process.env.PUBLIC_URL}/signUp.png`}
+						src="/signUp.png"
+						alt="Sign Up"
+					/>
+
+					
+				
+
 				<form
 					onSubmit={handleSubmit}
 					style={{
@@ -150,7 +156,7 @@ function Home() {
 						placeholder="Username"
 						value={data.username}
 						onChange={handleInput}
-						style={getInputStyle("name")}
+						style={getInputStyle("username")}
 					/>
 					<span style={getErrorStyle("username")}>{errors.username}</span>
 
@@ -160,7 +166,7 @@ function Home() {
 						placeholder="Email"
 						value={data.email}
 						onChange={handleInput}
-						style={getInputStyle("name")}
+						style={getInputStyle("email")}
 					/>
 					<span style={getErrorStyle("email")}>{errors.email}</span>
 
@@ -170,7 +176,7 @@ function Home() {
 						placeholder="Mobile"
 						value={data.mobile}
 						onChange={handleInput}
-						style={getInputStyle("name")}
+						style={getInputStyle("mobile")}
 					/>
 					<span style={getErrorStyle("mobile")}> {errors.mobile} </span>
 
@@ -230,6 +236,57 @@ function Home() {
 						type="submit">
 						SIGN UP
 					</button>
+					<p
+						style={{
+							color: "white",
+							fontFamily: ' "Roboto", sans-serif;',
+							fontWeight: "400",
+							fontSize: "1.5vw",
+							marginLeft: "7vw",
+							marginRight: "7vw",
+							marginTop: "0.5vw",
+							marginBottom: "0vw",
+							paddingLeft: "1vw",
+							paddingRight: "1vw",
+							lineHeight: "2vw",
+						}}>
+						By clicking on Sign up. you agree to Superapp&nbsp;
+						<span
+							style={{
+								color: "#72DB73",
+								fontFamily: ' "Roboto", sans-serif;',
+								fontWeight: "400",
+								fontSize: "1.5vw",
+							}}>
+							Terms and Conditions of Use
+						</span>
+					</p>
+					<p
+						style={{
+							color: "white",
+							fontFamily: ' "Roboto", sans-serif;',
+							fontWeight: "400",
+							fontSize: "1.5vw",
+							marginLeft: "7vw",
+							marginRight: "7vw",
+							marginTop: "0vw",
+							marginBottom: "1vw",
+							paddingLeft: "1vw",
+							paddingRight: "1vw",
+							lineHeight: "2vw",
+						}}>
+						To learn more about how Superapp collects, uses, shares and protects
+						your personal data please head Superapp&nbsp;
+						<span
+							style={{
+								color: "#72DB73",
+								fontFamily: ' "Roboto", sans-serif;',
+								fontWeight: "400",
+								fontSize: "1.5vw",
+							}}>
+							Privacy Policy
+						</span>
+					</p>
 				</form>
 			</div>
 		</div>
