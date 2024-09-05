@@ -14,9 +14,14 @@ function Info() {
 	useEffect(() => {
 		fetch("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json")
 			.then((res) => res.json())
-			.then((data) => setNews(data.articles[Math.random()*data.articles.length | 0]));
+			.then((data) =>
+				setNews(
+					data.articles[Math.floor((Math.random() * data.articles.length) | 0)]
+				)
+			);
 	}, []);
-  console.log(news);
+	//news && console.log(news.content.split("["));
+	console.log(news);
 	return (
 		<div>
 			<div
@@ -61,7 +66,25 @@ function Info() {
 				}}
 				value={notes}
 				onChange={updateNotes}></textarea>
-      
+
+			{news ? (
+				<div>
+					{" "}
+					<img
+						src={news.urlToImage}
+						width={300}
+						height={300}
+						alt={news.title}
+					/>
+					<p>{news.title}</p>
+					<p>{news.description}</p>
+					<p>
+						{news.content ? news.content.split("[")[0] : "No content available"}
+					</p>
+				</div>
+			) : (
+				"No news"
+			)}
 		</div>
 	);
 }
